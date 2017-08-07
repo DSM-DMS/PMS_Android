@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dsm_android.pms_notice.MainActivity">
+    tools:context="dsm_android.pms_notice.activities.MainActivity">
 
     <LinearLayout
         android:gravity="center"

@@ -3,8 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PMS_Android.iml" filepath="$PROJECT_DIR$/PMS_Android.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/PMS_Notice.iml" filepath="$PROJECT_DIR$/PMS_Notice.iml" />
+=======
+      <module fileurl="file://D:\Github\PMS_Android\PMS_Notice.iml" filepath="D:\Github\PMS_Android\PMS_Notice.iml" />
+>>>>>>> 09db2da8aacdcc400dae33e054a2fb5d4cca2116
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Github\PMS_Android\app\app.iml" filepath="D:\Github\PMS_Android\app\app.iml" />
     </modules>
   </component>
 </project>
