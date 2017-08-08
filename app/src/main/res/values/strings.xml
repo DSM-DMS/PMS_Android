@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PMS_Android</string>
+    <string name="temp_intro_string">8월 개학을 맞아 방과후를 신청받습니다.\n대덕 소프트웨어 마이스터 고등학교 학생 여러분은 방과후 신청서를 작성하여 주시기 바랍니다.\n이번에는 팀DMS가 개발을 지원하여 준 관계로 DMS 웹, 앱으로 방과후를 신청 할 수 있습니다.\n참고하시길 바랍니다.</string>
+</resources>
