@@ -4,27 +4,23 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/class_week"
-        android:textSize="20sp"
-        android:text="월요일"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:id="@+id/question_name_text"
+        android:textSize="24sp"
+        android:text="질문 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <View
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
-        android:layout_height="3sp"
-        android:background="#000000"
-        >
-
-    </View>
+        android:layout_height="4sp"
+        android:background="#000000"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/choose_class_recyclerview"
+        android:id="@+id/choose_answer_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent" />
 
 
 

@@ -53,6 +53,9 @@
     </LinearLayout>
 
     <android.support.v4.view.ViewPager
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/question_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -62,6 +65,7 @@
     <Button
         android:elevation="16dp"
         android:text="다음 문항"
+        android:id="@+id/next_button"
         android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
