@@ -8,7 +8,11 @@
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+<<<<<<< HEAD
         android:layout_alignParentStart="true" />
+=======
+        android:layout_alignBottom="@+id/choose_class_checkbox" />
+>>>>>>> 5c4f66a2b73763c09b2672cff7a63afbaa09da55
 
     <CheckBox
         android:id="@+id/choose_class_checkbox"

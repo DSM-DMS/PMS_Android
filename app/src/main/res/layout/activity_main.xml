@@ -4,7 +4,12 @@
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent">
+=======
+    android:layout_height="match_parent"
+    tools:context="dsm_android.pms_notice.activities.MainActivity">
+>>>>>>> 5c4f66a2b73763c09b2672cff7a63afbaa09da55
 
     <LinearLayout
         android:gravity="center"
@@ -16,7 +21,11 @@
 
 
     </LinearLayout>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 5c4f66a2b73763c09b2672cff7a63afbaa09da55
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -37,7 +46,10 @@
             android:textSize="12sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:id="@+id/date_text"
+=======
+>>>>>>> 5c4f66a2b73763c09b2672cff7a63afbaa09da55
             android:text="기간 : 2017-08-13 ~ 2017-08-20"/>
 
         <TextView
@@ -47,6 +59,7 @@
             android:layout_marginRight="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:id="@+id/intro_text"
             android:text="@string/temp_intro_string"/>
 
@@ -62,6 +75,19 @@
 
     <Button
         android:id="@+id/next_button"
+=======
+            android:text="@string/temp_intro_string"/>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+    </android.support.v4.view.ViewPager>
+    
+    <Button
+>>>>>>> 5c4f66a2b73763c09b2672cff7a63afbaa09da55
         android:elevation="16dp"
         android:text="다음 문항"
         android:background="#fff"

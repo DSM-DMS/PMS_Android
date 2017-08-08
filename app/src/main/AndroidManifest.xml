@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="dms_android.pms_android">
+=======
+    package="dsm_android.pms_notice">
+>>>>>>> 5c4f66a2b73763c09b2672cff7a63afbaa09da55
 
     <application
         android:allowBackup="true"
@@ -9,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".MainActivity">
+=======
+        <activity android:name=".activities.MainActivity">
+>>>>>>> 5c4f66a2b73763c09b2672cff7a63afbaa09da55
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
