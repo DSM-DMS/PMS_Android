@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nextButton();
+                question_view_pager.setCurrentItem(question_view_pager.getCurrentItem() + 1, true);
             }
         });
 
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 Log.d("xxx", "onPageSelected: " + position);
+                setNextButtonText(position, 3);
                 setViewCount(view, 3, position);
             }
 
@@ -95,11 +96,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void nextButton() {
-        question_view_pager.setCurrentItem(question_view_pager.getCurrentItem() + 1, true);
-
-        if(question_view_pager.getCurrentItem()==question_view_pager.getChildCount()){
+    private void setNextButtonText(int currentCount, int maxCount) {
+        if(currentCount + 1 == maxCount){
+            Log.d("xxx", "setNextButtonText: " + question_view_pager.getChildCount());
             nextButton.setText("제출하기");
+        }else{
+            nextButton.setText("다음 문항");
         }
     }
 
