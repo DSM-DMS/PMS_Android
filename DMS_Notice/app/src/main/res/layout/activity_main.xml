@@ -61,6 +61,16 @@
         android:layout_weight="1">
         
     </android.support.v4.view.ViewPager>
+
+    <View
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="2sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
+
+    </View>
     
     <Button
         android:elevation="16dp"
