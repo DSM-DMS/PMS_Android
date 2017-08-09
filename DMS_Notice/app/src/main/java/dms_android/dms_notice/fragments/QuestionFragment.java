@@ -9,9 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import dms_android.dms_notice.R;
+import dms_android.dms_notice.adapter.QuestionAdapter;
+import dms_android.dms_notice.model.CheckBoxContent;
 
 /**
  * Created by root1 on 2017. 8. 8..
@@ -19,6 +22,7 @@ import dms_android.dms_notice.R;
 
 public class QuestionFragment extends Fragment {
     String questionName;
+    ArrayList<CheckBoxContent> arrayList;
 
     @SuppressLint("ValidFragment")
     public QuestionFragment(String name){
@@ -28,38 +32,34 @@ public class QuestionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.question_recycler,container,false);
-        TextView question_name_text = (TextView)view.findViewById(R.id.question_name_text);
-        RecyclerView choose_answer_recyclerview = (RecyclerView)view.findViewById(R.id.choose_answer_recyclerview);
+        View view = inflater.inflate(R.layout.question_recycler, container, false);
+        RecyclerView choose_answer_recyclerview = (RecyclerView) view.findViewById(R.id.choose_answer_recyclerview);
 
-        question_name_text.setText(questionName);
+
         choose_answer_recyclerview.setLayoutManager(new LinearLayoutManager(container.getContext()));
-        choose_answer_recyclerview.setAdapter(new QuestionRecyclerAdapter());
+        choose_answer_recyclerview.setAdapter(new QuestionAdapter(getContext(),getDate()));
         return view;
     }
 
-    private class QuestionRecyclerAdapter extends RecyclerView.Adapter{
+    private ArrayList<CheckBoxContent> getDate() {
+        return arrayList = new ArrayList<CheckBoxContent>() {
+            {
+                add(new CheckBoxContent("방과후 내용"));
+                add(new CheckBoxContent("방과후 내용"));
 
-        @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.choose_class_view,parent,false);
-            return new QuestionRecyclerViewHolder(view);
-        }
+                add(new CheckBoxContent("방과후 내용"));
 
-        @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+                add(new CheckBoxContent("방과후 내용"));
 
-        }
+                add(new CheckBoxContent("방과후 내용"));
+                add(new CheckBoxContent("방과후 내용"));
+                add(new CheckBoxContent("방과후 내용"));
+                add(new CheckBoxContent("방과후 내용"));
 
-        @Override
-        public int getItemCount() {
-            return 10;
-        }
-
-        private class QuestionRecyclerViewHolder extends RecyclerView.ViewHolder{
-            public QuestionRecyclerViewHolder(View itemView) {
-                super(itemView);
             }
-        }
+        };
+
+
     }
 }
+
