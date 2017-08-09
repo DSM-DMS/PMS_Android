@@ -73,5 +73,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void nextButton() {
         question_view_pager.setCurrentItem(question_view_pager.getCurrentItem() + 1, true);
+
+        if(question_view_pager.getCurrentItem()==question_view_pager.getChildCount()){
+            nextButton.setText("제출하기");
+        }
     }
+
+
 }
