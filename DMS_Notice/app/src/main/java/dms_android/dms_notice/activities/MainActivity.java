@@ -1,6 +1,5 @@
 package dms_android.dms_notice.activities;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -39,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        setViewCount(view, 5);
+        setViewCount(view, 10);
     }
 
     private void setViewCount(LinearLayout view, int count){
         for(int i = 0;i < count;i++){
             View countView = new View(getApplicationContext());
-            countView.setBackgroundColor(Color.GRAY);
+            countView.setBackground(getResources().getDrawable(R.drawable.count_view_shape));
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(50, 50);
             layoutParams.setMargins(8,0,8,0);
             view.addView(countView, layoutParams);
