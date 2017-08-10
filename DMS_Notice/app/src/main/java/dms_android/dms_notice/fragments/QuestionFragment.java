@@ -26,12 +26,14 @@ public class QuestionFragment extends Fragment {
 
 
     DataClass data;
+    int position;
 
     ArrayList<CheckBoxContent> arrayList;
 
     @SuppressLint("ValidFragment")
-    public QuestionFragment(DataClass data){
+    public QuestionFragment(DataClass data, int position){
         this.data = data;
+        this.position = position;
     }
 
     @Nullable
@@ -45,7 +47,7 @@ public class QuestionFragment extends Fragment {
         question_name_text.setText(data.getQuestionName());
 
         choose_answer_recyclerview.setLayoutManager(new LinearLayoutManager(container.getContext()));
-        choose_answer_recyclerview.setAdapter(new QuestionAdapter(getContext(), data.getAnswerList()));
+        choose_answer_recyclerview.setAdapter(new QuestionAdapter(getContext(), data.getAnswerList(), position));
 
         return view;
     }

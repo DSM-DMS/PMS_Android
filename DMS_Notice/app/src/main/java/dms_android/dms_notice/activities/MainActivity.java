@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private int size;
 
+    public static int [] currentSet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         tempData.add(new DataClass("토요일", dataArray2));
 
         size = tempData.size();
+
+        currentSet = new int[size];
 
         question_view_pager = (ViewPager)findViewById(R.id.question_view_pager);
         question_view_pager.setAdapter(new QuestionPagerAdapter(getSupportFragmentManager(), tempData));
@@ -120,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new QuestionFragment(data.get(position));
+            return new QuestionFragment(data.get(position), position);
         }
 
         @Override
