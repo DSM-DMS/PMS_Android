@@ -11,7 +11,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import dms_android.dms_notice.R;
-import dms_android.dms_notice.model.CheckBoxContent;
 
 /**
  * Created by dsm2016 on 2017-08-10.
@@ -19,10 +18,10 @@ import dms_android.dms_notice.model.CheckBoxContent;
 
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<CheckBoxContent> items;
-    private int selectedPosition=-1;
+    private ArrayList items;
+    private int selectedPosition = -1;
 
-    public QuestionAdapter(Context context, ArrayList<CheckBoxContent> items){
+    public QuestionAdapter(Context context, ArrayList items){
         this.context=context;
         this.items=items;
     }
@@ -36,16 +35,15 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.question_name_text.setText(items.get(position).getText());
+        holder.question_name_text.setText((Integer) items.get(position));
 
-
-        if(position==selectedPosition){
+        if(position == selectedPosition){
             holder.checkBox.setChecked(true);
         }else{
             holder.checkBox.setChecked(false);
         }
 
-        holder.checkBox.setOnClickListener(onStateChangedListener(holder.checkBox,position));
+        holder.checkBox.setOnClickListener(onStateChangedListener(holder.checkBox, position));
     }
 
 
@@ -62,6 +60,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
         public ViewHolder(View v) {
             super(v);
+
             checkBox = (CheckBox) v.findViewById(R.id.choose_class_checkbox);
             question_name_text=(TextView)v.findViewById(R.id.class_category);
         }
@@ -72,10 +71,11 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 if(checkBox.isChecked()){
-                    selectedPosition=position;
+                    selectedPosition = position;
                 }else {
                     selectedPosition=-1;
                 }
+
                 notifyDataSetChanged();
             }
         };

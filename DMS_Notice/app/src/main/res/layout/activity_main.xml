@@ -50,12 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:id="@+id/intro_text"
-            android:text="8월 개학을 맞아 방과후 신청을 받습니다 이에
-대덕 소프트웨어 학생 여러분들은 방과후 신청서를 작성하여
-주시길 바랍니다.
-특히 이번에는 팀 DMS가 개발을 지원하여 준 관계로 DMS 웹 앱으로도
-방과후를 신청 할 수 있습니다.
-이 점 참고하시길 바랍니다"/>
+            android:text="@string/default_intro"/>
 
     </LinearLayout>
 
