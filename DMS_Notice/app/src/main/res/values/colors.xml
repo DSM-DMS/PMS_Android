@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
-    <color name="tap_layout">#EEEEEE</color>
+    <color name="tap_layout">#EEEEEE</color> <!--Use in school_newsletter layout-->
+    <color name="question_list">#1565C0</color> <!--Use in activity main layout-->
+    <color name="white">#FAFAFA</color>
 </resources>

@@ -12,17 +12,25 @@
         android:id="@+id/category_tabLayout">
     </android.support.design.widget.TabLayout>
 
-    <TextView
-        android:id="@+id/text1"
-        android:textSize="28sp"
-        android:layout_width="wrap_content"
-        android:text="board"
-        android:layout_marginLeft="48dp"
-        android:layout_height="28dp"
-        android:layout_below="@+id/category_tabLayout"
+    <LinearLayout
+        android:id="@+id/text_linear"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        />
+        android:layout_below="@+id/category_tabLayout"
+        >
 
+        <TextView
+            android:id="@+id/text1"
+            android:textSize="28sp"
+            android:layout_width="wrap_content"
+            android:text="board"
+            android:layout_marginLeft="48dp"
+            android:layout_height="28dp"
+            />
+
+    </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/newsletter_list"
         android:layout_centerHorizontal="true"
@@ -30,7 +38,7 @@
         android:background="@color/tap_layout"
         android:layout_marginLeft="64dp"
         android:layout_height="match_parent"
-        android:layout_below="@+id/text1"
+        android:layout_below="@+id/text_linear"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="32dp"
         >
