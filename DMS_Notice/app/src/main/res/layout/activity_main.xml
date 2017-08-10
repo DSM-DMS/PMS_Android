@@ -36,7 +36,6 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:textSize="12sp"
-            android:textColor="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:text="기간 : 2017-10-11~2017-11-11"
             android:layout_height="wrap_content"
