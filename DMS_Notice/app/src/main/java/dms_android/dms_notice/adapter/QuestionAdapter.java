@@ -35,7 +35,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.question_name_text.setText((Integer) items.get(position));
+        holder.question_name_text.setText((String) items.get(position));
 
         if(position == selectedPosition){
             holder.checkBox.setChecked(true);

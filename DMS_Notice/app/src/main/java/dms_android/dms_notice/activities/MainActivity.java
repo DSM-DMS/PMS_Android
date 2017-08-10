@@ -12,9 +12,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
 
 import dms_android.dms_notice.R;
 import dms_android.dms_notice.fragments.QuestionFragment;
