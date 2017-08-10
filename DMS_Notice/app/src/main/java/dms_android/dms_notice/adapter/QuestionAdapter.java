@@ -11,20 +11,22 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import dms_android.dms_notice.R;
-import dms_android.dms_notice.model.CheckBoxContent;
+import dms_android.dms_notice.activities.MainActivity;
 
 /**
  * Created by dsm2016 on 2017-08-10.
  */
 
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHolder> {
-    private Context context;
-    private ArrayList<CheckBoxContent> items;
-    private int selectedPosition=-1;
 
-    public QuestionAdapter(Context context, ArrayList<CheckBoxContent> items){
+    private Context context;
+    private ArrayList items;
+    private static int position;
+
+    public QuestionAdapter(Context context, ArrayList items, int position){
         this.context=context;
         this.items=items;
+        this.position = position;
     }
 
 
@@ -36,26 +38,23 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.question_name_text.setText(items.get(position).getText());
+        holder.question_name_text.setText((String) items.get(position));
 
-
-        if(position==selectedPosition){
+        if(position == MainActivity.currentSet[this.position] - 1){
             holder.checkBox.setChecked(true);
         }else{
             holder.checkBox.setChecked(false);
         }
 
-        holder.checkBox.setOnClickListener(onStateChangedListener(holder.checkBox,position));
+        holder.checkBox.setOnClickListener(onStateChangedListener(holder.checkBox, position));
     }
-
-
 
     @Override
     public int getItemCount() {
         return items.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         public CheckBox checkBox;
         public TextView question_name_text;
@@ -72,10 +71,11 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 if(checkBox.isChecked()){
-                    selectedPosition=position;
+                    MainActivity.currentSet[QuestionAdapter.position] = position + 1;
                 }else {
-                    selectedPosition=-1;
+                    MainActivity.currentSet[QuestionAdapter.position] = 0;
                 }
+
                 notifyDataSetChanged();
             }
         };
