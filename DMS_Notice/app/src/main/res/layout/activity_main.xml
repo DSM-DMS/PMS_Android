@@ -30,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="방과후 신청서"
+            android:textColor="@color/dark"
             android:id="@+id/name_text"/>
 
         <TextView
