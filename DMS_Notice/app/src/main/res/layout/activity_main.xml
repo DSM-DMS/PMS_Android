@@ -58,17 +58,6 @@
 방과후를 신청 할 수 있습니다.
 이 점 참고하시길 바랍니다"/>
 
-
-        <View
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="2sp"
-            android:background="@color/colorPrimary"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            />
-
     </LinearLayout>
 
     <android.support.v4.view.ViewPager
