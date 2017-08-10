@@ -32,7 +32,9 @@
             android:layout_height="28dp"
             />
 
+
     </LinearLayout>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/newsletter_list"
         android:layout_centerHorizontal="true"
