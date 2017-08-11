@@ -20,33 +20,31 @@ import dms_android.dms_notice.activities.MainActivity;
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList items;
-    private static int position;
+    private ArrayList<String> items;
+    private int listPosition;
 
-    public QuestionAdapter(Context context, ArrayList items, int position){
+    public QuestionAdapter(Context context, ArrayList<String> items, int position){
         this.context=context;
         this.items=items;
-        this.position = position;
+        this.listPosition = position;
     }
 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.choose_class_view,parent,false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, viewType, listPosition);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.question_name_text.setText((String) items.get(position));
+        holder.question_name_text.setText(items.get(position));
 
-        if(position == MainActivity.currentSet[this.position] - 1){
+        if(position == MainActivity.currentSet[this.listPosition] - 1){
             holder.checkBox.setChecked(true);
         }else{
             holder.checkBox.setChecked(false);
         }
-
-        holder.checkBox.setOnClickListener(onStateChangedListener(holder.checkBox, position));
     }
 
     @Override
@@ -57,27 +55,25 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     class ViewHolder extends RecyclerView.ViewHolder {
 
         public CheckBox checkBox;
-        public TextView question_name_text;
+        private TextView question_name_text;
 
-        public ViewHolder(View v) {
+        public ViewHolder(View v, final int position, final int listPosition) {
             super(v);
             checkBox = (CheckBox) v.findViewById(R.id.choose_class_checkbox);
+            checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MainActivity.currentSet[listPosition] = position + 1;
+                    notifyDataSetChanged();
+                }
+            });
+
             question_name_text=(TextView)v.findViewById(R.id.class_category);
         }
     }
 
-    private View.OnClickListener onStateChangedListener(final CheckBox checkBox, final int position){
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(checkBox.isChecked()){
-                    MainActivity.currentSet[QuestionAdapter.position] = position + 1;
-                }else {
-                    MainActivity.currentSet[QuestionAdapter.position] = 0;
-                }
-
-                notifyDataSetChanged();
-            }
-        };
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 }

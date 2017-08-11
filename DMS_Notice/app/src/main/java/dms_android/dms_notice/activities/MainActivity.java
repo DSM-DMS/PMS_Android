@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
+            Log.d("xxx Main", "getItem: " + position);
             return new QuestionFragment(data.get(position), position);
         }
 
@@ -135,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setNextButtonText(int currentCount, int maxCount) {
         if(currentCount + 1 == maxCount){
-            Log.d("xxx", "setNextButtonText: " + question_view_pager.getChildCount());
             next_button.setText("제출하기");
         }else{
             next_button.setText("다음 문항");

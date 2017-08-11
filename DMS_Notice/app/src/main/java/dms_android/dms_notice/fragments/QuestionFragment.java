@@ -6,16 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import dms_android.dms_notice.R;
 import dms_android.dms_notice.adapter.QuestionAdapter;
-import dms_android.dms_notice.model.CheckBoxContent;
 import dms_android.dms_notice.model.DataClass;
 
 /**
@@ -27,8 +25,6 @@ public class QuestionFragment extends Fragment {
 
     DataClass data;
     int position;
-
-    ArrayList<CheckBoxContent> arrayList;
 
     @SuppressLint("ValidFragment")
     public QuestionFragment(DataClass data, int position){
@@ -47,6 +43,7 @@ public class QuestionFragment extends Fragment {
         question_name_text.setText(data.getQuestionName());
 
         choose_answer_recyclerview.setLayoutManager(new LinearLayoutManager(container.getContext()));
+        Log.d("xxxFragment", "onCreateView: " + position);
         choose_answer_recyclerview.setAdapter(new QuestionAdapter(getContext(), data.getAnswerList(), position));
 
         return view;
