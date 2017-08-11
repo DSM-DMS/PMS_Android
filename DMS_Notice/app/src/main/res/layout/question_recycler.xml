@@ -8,6 +8,7 @@
         android:textSize="24sp"
         android:elevation="16dp"
         android:text="질문 1"
+        android:textColor="@color/dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
